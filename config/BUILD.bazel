@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["config.go"],
+    importpath = "github.com/coreos/tectonic-config/config",
+    visibility = ["//visibility:public"],
+    deps = ["//vendor/github.com/ghodss/yaml:go_default_library"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["config_test.go"],
+    data = glob(["testdata/**"]),
+    embed = [":go_default_library"],
+    importpath = "github.com/coreos/tectonic-config/config",
+    deps = [
+        "//config/kube-core:go_default_library",
+        "//vendor/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",
+    ],
+)

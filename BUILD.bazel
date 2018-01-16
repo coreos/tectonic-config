@@ -1,0 +1,29 @@
+load("@io_bazel_rules_go//go:def.bzl", "gazelle")
+
+# TODO(diegs): remove '-proto disable' once
+# https://github.com/bazelbuild/rules_go/issues/859 is resolved.
+gazelle(
+    name = "gazelle",
+    args = [
+        "-proto",
+        "disable",
+    ],
+    command = "fix",
+    external = "vendored",
+    prefix = "github.com/coreos/tectonic-config",
+)
+
+# This target is the same as the one above, but prints diffs instead of fixing the files directly.
+# Used by the linter.
+gazelle(
+    name = "gazelle_diff",
+    args = [
+        "-proto",
+        "disable",
+        "-mode",
+        "diff",
+    ],
+    command = "fix",
+    external = "vendored",
+    prefix = "github.com/coreos/tectonic-config",
+)
