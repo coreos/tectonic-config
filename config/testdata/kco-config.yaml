@@ -1,0 +1,17 @@
+apiVersion: v1
+authConfig:
+  oidc_client_id: tectonic-kubectl
+  oidc_groups_claim: groups
+  oidc_issuer_url: https://kco-test.coreservices.team.coreos.systems/identity
+  oidc_username_claim: email
+cloudProviderConfig:
+  cloud_config_path: /cloud/config/path
+  cloud_provider_profile: aws
+initialConfig:
+  initial_master_count: 2
+kind: KubeCoreOperatorConfig
+networkConfig:
+  advertise_address: 0.0.0.0
+  cluster_cidr: 10.2.0.0/16
+  etcd_servers: https://kco-test-etcd-0.coreservices.team.coreos.systems:2379
+  service_cidr: 10.3.0.0/16

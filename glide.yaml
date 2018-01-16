@@ -1,0 +1,8 @@
+package: github.com/coreos/tectonic-config
+import:
+- package: k8s.io/api
+  version: kubernetes-1.9.0
+- package: k8s.io/apimachinery
+  version: kubernetes-1.9.0
+- package: github.com/ghodss/yaml
+  version: v1.0.0
