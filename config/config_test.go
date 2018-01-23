@@ -18,6 +18,9 @@ var config = &kubecore.OperatorConfig{
 		Kind:       kubecore.Kind,
 		APIVersion: kubecore.APIVersion,
 	},
+	ClusterConfig: kubecore.ClusterConfig{
+		APIServerURL: "https://kco-test-api.coreservices.team.coreos.systems",
+	},
 	AuthConfig: kubecore.AuthConfig{
 		OIDCClientID:      "tectonic-kubectl",
 		OIDCIssuerURL:     "https://kco-test.coreservices.team.coreos.systems/identity",

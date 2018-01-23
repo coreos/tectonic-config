@@ -7,6 +7,8 @@ authConfig:
 cloudProviderConfig:
   cloud_config_path: /cloud/config/path
   cloud_provider_profile: aws
+clusterConfig:
+  apiserver_url: https://kco-test-api.coreservices.team.coreos.systems
 kind: KubeCoreOperatorConfig
 networkConfig:
   advertise_address: 0.0.0.0
