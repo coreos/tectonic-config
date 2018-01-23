@@ -7,8 +7,6 @@ authConfig:
 cloudProviderConfig:
   cloud_config_path: /cloud/config/path
   cloud_provider_profile: aws
-initialConfig:
-  initial_master_count: 2
 kind: KubeCoreOperatorConfig
 networkConfig:
   advertise_address: 0.0.0.0

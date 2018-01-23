@@ -18,7 +18,6 @@ type OperatorConfig struct {
 	AuthConfig          `json:"authConfig,omitempty"`
 	CloudProviderConfig `json:"cloudProviderConfig,omitempty"`
 	NetworkConfig       `json:"networkConfig,omitempty"`
-	InitialConfig       `json:"initialConfig,omitempty"`
 }
 
 // AuthConfig holds Authentication related config values.
@@ -41,12 +40,4 @@ type NetworkConfig struct {
 	ClusterCIDR      string `json:"cluster_cidr"`
 	EtcdServers      string `json:"etcd_servers"`
 	ServiceCIDR      string `json:"service_cidr"`
-}
-
-// InitialConfig holds information stored at cluster install time. This information may not always
-// be completely accurate throughout the lifecycle of the cluster as values may change over time.
-// These values should not be relied on across versions. These values should only be used during
-// installation and should not drive decisions during upgrades.
-type InitialConfig struct {
-	InitialMasterCount int `json:"initial_master_count"`
 }

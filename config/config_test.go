@@ -34,9 +34,6 @@ var config = &kubecore.OperatorConfig{
 		EtcdServers:      "https://kco-test-etcd-0.coreservices.team.coreos.systems:2379",
 		ServiceCIDR:      "10.3.0.0/16",
 	},
-	InitialConfig: kubecore.InitialConfig{
-		InitialMasterCount: 2,
-	},
 }
 
 func TestToFile(t *testing.T) {
