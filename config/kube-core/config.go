@@ -15,6 +15,7 @@ const (
 // decisions.
 type OperatorConfig struct {
 	metav1.TypeMeta     `json:",inline"`
+	ClusterConfig       `json:"clusterConfig,omitempty"`
 	AuthConfig          `json:"authConfig,omitempty"`
 	CloudProviderConfig `json:"cloudProviderConfig,omitempty"`
 	NetworkConfig       `json:"networkConfig,omitempty"`
@@ -40,4 +41,9 @@ type NetworkConfig struct {
 	ClusterCIDR      string `json:"cluster_cidr"`
 	EtcdServers      string `json:"etcd_servers"`
 	ServiceCIDR      string `json:"service_cidr"`
+}
+
+// ClusterConfig holds global/general information about the cluster.
+type ClusterConfig struct {
+	APIServerURL string `json:"apiserver_url"`
 }
