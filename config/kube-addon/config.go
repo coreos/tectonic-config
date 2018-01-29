@@ -14,13 +14,9 @@ const (
 // OperatorConfig contains configuration for KAO managed add-ons
 type OperatorConfig struct {
 	metav1.TypeMeta `json:",inline"`
-	HeapsterConfig  `json:"heapsterConfig,omitempty"`
 	DNSConfig       `json:"dnsConfig,omitempty"`
 	CloudProvider   string `json:"cloudProvider,omitempty"`
 }
-
-// HeapsterConfig options for heapster add on
-type HeapsterConfig struct{}
 
 // DNSConfig options for the dns configuration
 type DNSConfig struct {
