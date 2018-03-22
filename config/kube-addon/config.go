@@ -2,6 +2,8 @@ package kubeaddon
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+
+	tnc "github.com/coreos/tectonic-config/config/tectonic-node-controller"
 )
 
 const (
@@ -13,9 +15,10 @@ const (
 
 // OperatorConfig contains configuration for KAO managed add-ons
 type OperatorConfig struct {
-	metav1.TypeMeta `json:",inline"`
-	DNSConfig       `json:"dnsConfig,omitempty"`
-	CloudProvider   string `json:"cloudProvider,omitempty"`
+	metav1.TypeMeta      `json:",inline"`
+	DNSConfig            `json:"dnsConfig,omitempty"`
+	CloudProvider        string `json:"cloudProvider,omitempty"`
+	tnc.ControllerConfig `json:"tncConfig"`
 }
 
 // DNSConfig options for the dns configuration

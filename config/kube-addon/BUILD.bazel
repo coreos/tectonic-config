@@ -5,5 +5,8 @@ go_library(
     srcs = ["config.go"],
     importpath = "github.com/coreos/tectonic-config/config/kube-addon",
     visibility = ["//visibility:public"],
-    deps = ["//vendor/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library"],
+    deps = [
+        "//config/tectonic-node-controller:go_default_library",
+        "//vendor/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",
+    ],
 )

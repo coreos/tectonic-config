@@ -2,8 +2,6 @@ package tectonicutility
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-
-	tnc "github.com/coreos/tectonic-config/config/tectonic-node-controller"
 )
 
 const (
@@ -21,7 +19,6 @@ type OperatorConfig struct {
 	StatsEmitterConfig      `json:"statsEmitterConfig"`
 	TectonicConfigMapConfig `json:"tectonicConfigMap"`
 	NetworkConfig           `json:"networkConfig"`
-	tnc.ControllerConfig    `json:"tncConfig"`
 }
 
 // IdentityConfig defines the config for Tectonic Identity.
