@@ -13,27 +13,17 @@ const (
 
 // ControllerConfig is the config structure TNC to generate NodeConfigs
 type ControllerConfig struct {
-	metav1.TypeMeta       `json:",inline"`
-	HTTPProxy             string `json:"HTTPProxy"`
-	HTTPSProxy            string `json:"HTTPSProxy"`
-	NoProxy               string `json:"NoProxy"`
-	KubeletImageURL       string `json:"KubeletImageURL"`
-	KubeletImageTag       string `json:"KubeletImageTag"`
-	IscsiEnabled          string `json:"IscsiEnabled"`
-	KubeconfigFetchCmd    string `json:"KubeconfigFetchCmd"`
-	TectonicTorcxImageURL string `json:"TectonicTorcxImageURL"`
-	TectonicTorcxImageTag string `json:"TectonicTorcxImageTag"`
-	BootstrapUpgradeCl    string `json:"BootstrapUpgradeCl"`
-	TorcxStoreURL         string `json:"TorcxStoreURL"`
-	TorcxSkipSetup        string `json:"TorcxSkipSetup"`
-	MasterNodeLabel       string `json:"MasterNodeLabel"`
-	WorkerNodeLabel       string `json:"WorkerNodeLabel"`
-	NodeTaintsParam       string `json:"NodeTaintsParam"`
-	ClusterDNSIP          string `json:"ClusterDNSIP"`
-	CloudProvider         string `json:"CloudProvider"`
-	CloudProviderConfig   string `json:"CloudProviderConfig"`
-	DebugConfig           string `json:"DebugConfig"`
-	ClusterName           string `json:"ClusterName"`
+	metav1.TypeMeta     `json:",inline"`
+	KubeconfigFetchCmd  string `json:"KubeconfigFetchCmd"` // TODO(yifan): Try to remove this.
+	ClusterDNSIP        string `json:"ClusterDNSIP"`
+	CloudProvider       string `json:"CloudProvider"`
+	CloudProviderConfig string `json:"CloudProviderConfig"`
+	ClusterName         string `json:"ClusterName"`
+
+	BaseDomain string `json:"BaseDomain"`
+
+	// Etcd vars
+	EtcdInitialCluster string `json:"EtcdInitialCluster"` // TODO(yifan): Calculate this based on 'BaseDomain'.
 
 	// User customizations, list of node configs in the cluster to collect and apply as part of the final config
 	AdditionalConfigs []string `json:"AddtionalConfigs"`
