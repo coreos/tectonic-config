@@ -6,12 +6,13 @@ operators that install and update components in a Tectonic cluster.
 
 ## Configuration Objects
 
-Configuration objects are defined for the following operators:
+Configuration objects are defined for the following operators and controllers:
 
 * [Kube Addon Operator](config/kube-addon)
 * [Kube Core Operator](config/kube-core)
 * [Tectonic Networking Operator](config/tectonic-network)
 * [Tectonic Utility Operator](config/tectonic-utiltiy)
+* [Tectonic Node Controller](config/tectonic-node-controller)
 
 In addition, some utility functions are defined in the [config
 library](config/).
