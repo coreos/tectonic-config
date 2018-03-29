@@ -32,6 +32,9 @@ type ControllerConfig struct {
 
 	// User customizations, list of node configs in the cluster to collect and apply as part of the final config
 	AdditionalConfigs []string `json:"additionalConfigs"`
+
+	// Pool update limits allowing individual roles to have a specific percentage or constant number of nodes that can be upgrading at a given time. If an empty string is provided only a single node will be updated at a given time
+	NodePoolUpdateLimit map[string]string `json:"nodePoolUpdateLimit"`
 }
 
 // OperatorConfig defines the configuration needed by the Tectonic Node Controller Operator.
