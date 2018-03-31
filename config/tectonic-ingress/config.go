@@ -11,10 +11,17 @@ const (
 	APIVersion = "v1"
 )
 
+const (
+	// TypeHAProxy is haproxy based openshift-router.
+	TypeHAProxy = "haproxy-router"
+)
+
 // OperatorConfig defines the configuration needed by the Tectonic Network Operator.
 type OperatorConfig struct {
 	metav1.TypeMeta `json:",inline"`
 
-	// The installer platform, e.g. "bare-metal"
-	InstallerPlatform string `json:"installerPlatform"`
+	Type           string `json:"type"`
+	StatsUsername  string `json:"statsUsername"`
+	StatsPassword  string `json:"statsPassword"`
+	ForceSubdomain string `json:"forceSubdomain"`
 }
