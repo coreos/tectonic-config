@@ -27,6 +27,12 @@ var config = &kubecore.OperatorConfig{
 		OIDCGroupsClaim:   "groups",
 		OIDCUsernameClaim: "email",
 	},
+	DNSConfig: kubecore.DNSConfig{
+		ClusterIP: "10.3.0.10",
+	},
+	RoutingConfig: kubecore.RoutingConfig{
+		Subdomain: "kco-test.coreservices.team.coreos.systems",
+	},
 	CloudProviderConfig: kubecore.CloudProviderConfig{
 		CloudConfigPath:      "/cloud/config/path",
 		CloudProviderProfile: "aws",
