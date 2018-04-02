@@ -9,9 +9,13 @@ cloudProviderConfig:
   cloud_provider_profile: aws
 clusterConfig:
   apiserver_url: https://kco-test-api.coreservices.team.coreos.systems
+dnsConfig:
+  clusterIP: 10.3.0.10
 kind: KubeCoreOperatorConfig
 networkConfig:
   advertise_address: 0.0.0.0
   cluster_cidr: 10.2.0.0/16
   etcd_servers: https://kco-test-etcd-0.coreservices.team.coreos.systems:2379
   service_cidr: 10.3.0.0/16
+routingConfig:
+  subdomain: kco-test.coreservices.team.coreos.systems
