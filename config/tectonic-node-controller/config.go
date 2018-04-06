@@ -19,7 +19,7 @@ const (
 // ControllerConfig is the config structure TNC to generate NodeConfigs
 type ControllerConfig struct {
 	metav1.TypeMeta     `json:",inline"`
-	KubeconfigFetchCmd  string `json:"kubeconfigFetchCmd"` // TODO(yifan): Try to remove this.
+	APIServerURL        string `json:"apiServerURL"`
 	ClusterDNSIP        string `json:"clusterDNSIP"`
 	CloudProvider       string `json:"cloudProvider"`
 	CloudProviderConfig string `json:"cloudProviderConfig"`
