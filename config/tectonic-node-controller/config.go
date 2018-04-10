@@ -27,8 +27,8 @@ type ControllerConfig struct {
 
 	BaseDomain string `json:"baseDomain"`
 
-	// Etcd vars
-	EtcdInitialCluster string `json:"etcdInitialCluster"` // TODO(yifan): Calculate this based on 'BaseDomain'.
+	// Size of the initial etcd cluster.
+	EtcdInitialCount int `json:"etcdInitialCount"`
 
 	// User customizations, list of node configs in the cluster to collect and apply as part of the final config
 	AdditionalConfigs []string `json:"additionalConfigs"`
