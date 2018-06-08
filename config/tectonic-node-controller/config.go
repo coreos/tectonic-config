@@ -28,6 +28,9 @@ type ControllerConfig struct {
 
 	BaseDomain string `json:"baseDomain"`
 
+	// Container Linux channel targeted
+	CLChannel string `json:"clChannel"`
+
 	// Size of the initial etcd cluster.
 	EtcdInitialCount int `json:"etcdInitialCount"`
 
